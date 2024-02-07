@@ -1,8 +1,75 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿<!-- Home/Index.cshtml -->
+@{
+    ViewData["Title"] = "صفحه اصلی";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-2 col-lg-2 bg-light">
+            <div class="sidebar-header">
+                <h3>منو</h3>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">خانه</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Charts")">داشبورد مانیتورینگ معدن</a>
+                </li>
+                <!-- Add other menu items as needed -->
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-10 col-lg-10">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom bg-light-blue">
+                <h1 class="h2">به مانیتورینگ معدن خوش آمدید!</h1>
+            </div>
+            <p>برای مشاهده داشبورد مانیتورینگ معدن، از منوی سمت راست انتخاب کنید.</p>
+        </main>
+    </div>
 </div>
+
+<style>
+    body {
+        font-family: "Nazanin", sans-serif;
+    }
+
+    .sidebar {
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        z-index: 1;
+        background-color: #E5E5E5;
+        padding-top: 60px;
+    }
+
+    .sidebar-header {
+        padding: 20px;
+    }
+
+    .sidebar a {
+        padding: 10px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #000;
+        display: block;
+    }
+
+        .sidebar a:hover {
+            color: #fff;
+            background-color: #007bff;
+        }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .bg-light-blue {
+        background-color: #007bff;
+        color: #fff;
+    }
+</style>

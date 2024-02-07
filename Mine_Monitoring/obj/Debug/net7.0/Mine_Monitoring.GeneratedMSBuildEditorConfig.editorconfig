@@ -16,12 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Charts/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhcnRzXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Map/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Shared/Error.cshtml]

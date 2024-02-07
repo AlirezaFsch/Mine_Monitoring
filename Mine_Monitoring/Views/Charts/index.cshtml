@@ -1,0 +1,198 @@
+﻿@model ChartsViewModel
+@{
+    ViewData["Title"] = "Charts";
+}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمودارها</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css" />
+    <style>
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .chart {
+            flex: 1;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            width: 400px; /* Fixed width for each chart container */
+            height: 300px; /* Fixed height for each chart container */
+            position: relative; /* Ensure tooltips position correctly */
+        }
+
+        .pie-tooltip {
+            position: absolute;
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart">
+            <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="pieChart"></canvas>
+            <div id="pieTooltip" class="pie-tooltip"></div>
+        </div>
+        <div class="chart">
+            <canvas id="lineChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="ganttChart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script>
+        var ctxBar = document.getElementById('barChart').getContext('2d');
+        var barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.Provinces)),
+                datasets: [{
+                    label: 'تعداد معادن',
+                    data: @Html.Raw(Json.Serialize(Model.MineCounts)),
+                    backgroundColor: ['skyblue', 'lightgreen', 'gold', 'coral', 'violet', 'lightpink']
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctxPie = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.MineStatus)),
+                datasets: [{
+                    data: @Html.Raw(Json.Serialize(Model.MineStatusCounts)),
+                    backgroundColor: ['skyblue', 'red', 'green']
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: false
+                },
+                onHover: (event, chartElement) => {
+                    if (chartElement[0]) {
+                        var mouseX = event.clientX;
+                        var mouseY = event.clientY;
+                        var pieTooltip = document.getElementById('pieTooltip');
+                        pieTooltip.style.display = 'block';
+                        pieTooltip.style.left = mouseX + 'px';
+                        pieTooltip.style.top = mouseY + 'px';
+                        var index = chartElement[0].index;
+                        if (index === 0 || index === 1) {
+                            pieTooltip.style.fontSize = '24px';
+                        } else {
+                            pieTooltip.style.fontSize = '16px';
+                        }
+                        pieTooltip.textContent = chartElement[0].label + ': ' + chartElement[0].raw;
+                    } else {
+                        document.getElementById('pieTooltip').style.display = 'none';
+                    }
+                }
+            }
+        });
+
+        var ctxLine = document.getElementById('lineChart').getContext('2d');
+        var lineChart = new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.Years)),
+                datasets: [{
+                    label: 'تولید معدن در طول 10 سال گذشته',
+                    data: @Html.Raw(Json.Serialize(Model.ProductionOverYears)),
+                    borderColor: 'blue',
+                    backgroundColor: 'rgba(0, 0, 255, 0.2)'
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        // Add the Gantt chart
+        var ctxGantt = document.getElementById('ganttChart').getContext('2d');
+        var ganttChart = new Chart(ctxGantt, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.Years)),
+                datasets: [
+        @foreach (var mineral in Model.MineralProduction)
+        {
+            <text>
+                        {
+                            label: '@mineral.Name',
+                            data: [@string.Join(",", mineral.Production)],
+                            backgroundColor: '@mineral.Color'
+                        },
+            </text>
+        }
+                ]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    },
+                    datalabels: {
+                        anchor: 'center',
+                        align: 'center',
+                        color: 'black'
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        ticks: {
+                            callback: function (value, index, values) {
+                                return value + ' سال';
+                            }
+                        },
+                        min: Model.Years[0], // Fix the minimum value of the x-axis
+                        max: Model.Years[Model.Years.length - 1] // Fix the maximum value of the x-axis
+                    },
+                    y: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: 'میزان تولید (تن)'
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
