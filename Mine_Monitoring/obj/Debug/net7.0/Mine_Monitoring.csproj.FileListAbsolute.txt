@@ -1,11 +1,3 @@
-F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\appsettings.Development.json
-F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\appsettings.json
-F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.staticwebassets.runtime.json
-F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.exe
-F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.deps.json
-F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.runtimeconfig.json
-F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.dll
-F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.pdb
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.csproj.AssemblyReference.cache
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.GeneratedMSBuildEditorConfig.editorconfig
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.AssemblyInfoInputs.cache
@@ -14,6 +6,14 @@ F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitor
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.MvcApplicationPartsAssemblyInfo.cache
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.RazorAssemblyInfo.cache
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.RazorAssemblyInfo.cs
+F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\appsettings.Development.json
+F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\appsettings.json
+F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.staticwebassets.runtime.json
+F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.exe
+F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.deps.json
+F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.runtimeconfig.json
+F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.dll
+F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\bin\Debug\net7.0\Mine_Monitoring.pdb
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\staticwebassets\msbuild.Mine_Monitoring.Microsoft.AspNetCore.StaticWebAssets.props
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\staticwebassets\msbuild.build.Mine_Monitoring.props
 F:\Mine_Monitoring\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Mine_Monitoring.props

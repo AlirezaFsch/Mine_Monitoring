@@ -24,8 +24,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Map/Index.cshtml]
@@ -38,14 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Mine_Monitoring/Mine_Monitoring/Mine_Monitoring/Views/Shared/_Layout.cshtml]

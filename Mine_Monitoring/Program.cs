@@ -29,7 +29,7 @@ namespace Mine_Monitoring
             app.MapControllerRoute(
                 name: "default",
                 //pattern: "{controller=Map}/{action=Index}");
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Login}/{action=Index}/{id?}");
 
             app.Run();
         }

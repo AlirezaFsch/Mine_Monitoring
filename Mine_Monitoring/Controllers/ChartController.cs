@@ -30,7 +30,7 @@ namespace Mine_Monitoring.Controllers
             {
                 Provinces = new List<string> { "تهران", "اصفهان", "کرمان", "شیراز", "تبریز", "یزد" },
                 MineCounts = new List<int> { 2, 10, 20, 3, 5, 15 },
-                MineStatus = new List<string> { "فعال", "غیرفعال", "تحت بررسی" },
+                MineStatus = new List<string> { "فعال", "غیرفعال", "تحت اکتشاف" },
                 MineStatusCounts = new List<int> { 67, 17, 16 },
                 Years = Enumerable.Range(1392, 11).Select(year => year.ToString()).ToList(), // Years from 1392 to 1402
                 ProductionOverYears = Enumerable.Range(0, 11).Select(_ => random.Next(1000, 5000)).ToList(), // Sample production data over 11 years

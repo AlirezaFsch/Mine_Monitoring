@@ -1,49 +1,207 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Mine_Monitoring</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Mine_Monitoring.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            font-family: "B Nazanin", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-fluid {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            text-align: center;
+            flex: 0;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            overflow-x: hidden;
+            transition: width 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: fixed;
+            top: 40px; /* Adjust as needed */
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            position: relative;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+            padding-top: 10px;
+        }
+
+            .sidebar ul li {
+                padding: 10px;
+                text-align: center;
+                margin: 5px 0;
+            }
+
+                .sidebar ul li a {
+                    color: inherit;
+                    text-decoration: none;
+                    display: block;
+                    transition: color 0.3s;
+                }
+
+                    .sidebar ul li a:hover {
+                        background-color: #3498db;
+                    }
+
+                    .sidebar ul li a.active-page {
+                        color: #3498db;
+                    }
+
+        .sidebar-toggle {
+            position: absolute;
+            top: 10px;
+            right: -40px;
+            transform: translateY(50%);
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            cursor: pointer;
+            transition: right 0.3s;
+            z-index: 999;
+        }
+
+        .sidebar.minimized {
+            width: 50px;
+        }
+
+            .sidebar.minimized .sidebar-toggle {
+                right: 0;
+            }
+
+        .sidebar-show {
+            position: fixed;
+            top: 40px; /* Adjust as needed */
+            left: -50px; /* Adjust as needed */
+            z-index: 1000;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            transition: left 0.3s;
+        }
+
+            .sidebar-show:hover {
+                background-color: #555;
+            }
+
+            .sidebar-show i {
+                font-size: 20px;
+            }
+
+        .close-sidebar {
+            position: absolute;
+            top: 10px;
+            left: -30px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            transition: left 0.3s;
+        }
+
+            .close-sidebar:hover {
+                background-color: #555;
+            }
+
+            .close-sidebar i {
+                font-size: 20px;
+            }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Mine_Monitoring</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="container-fluid">
+        <div class="header">
+            <h1>سامانه جامع پایش معادن و صنایع معدنی کشور</h1>
+        </div>
+
+        <div class="main-content">
+            @RenderBody() <!-- This will render the content of each page -->
+        </div>
+
+        <div class="sidebar">
+            <button id="sidebar-toggle" class="sidebar-toggle">&#9654;</button>
+            <button id="close-sidebar" class="close-sidebar">&#10006;</button>
+            <div class="sidebar-header">
+                <h3>مانیتورینگ معادن</h3>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            <ul>
+                <li><a href="@Url.Action("Index", "Home")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active-page" : "")">صفحه اصلی</a></li>
+                <li><a href="@Url.Action("Index", "Charts")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Charts" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active-page" : "")">داشبورد مانیتورینگ معدن</a></li>
+                <li><a href="@Url.Action("Index", "Map")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Map" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active-page" : "")">نقشه معادن</a></li>
+                <!-- Add more sidebar items here -->
+            </ul>
+        </div>
+
+        <div class="sidebar-show" id="sidebar-show">&#9654;</div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Mine_Monitoring - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebar-toggle').click(function () {
+                $('.sidebar').toggleClass('minimized');
+                $('.main-content').toggleClass('minimized');
+            });
+
+            $('#sidebar-show').click(function () {
+                $('.sidebar').css('left', '0');
+                $(this).hide();
+            });
+
+            $('#close-sidebar').click(function () {
+                $('.sidebar').css('left', '-200px');
+                $('#sidebar-show').show();
+            });
+        });
+    </script>
 </body>
 </html>

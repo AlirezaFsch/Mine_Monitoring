@@ -1,6 +1,8 @@
 ﻿@model ChartsViewModel
+@using Mine_Monitoring.Models
+
 @{
-    ViewData["Title"] = "Charts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -37,7 +39,7 @@
     </style>
 </head>
 <body>
-    <div class="chart-container">
+    <div class="chart-container" style="position: relative;">
         <div class="chart">
             <canvas id="barChart"></canvas>
         </div>
@@ -73,6 +75,11 @@
                             beginAtZero: true
                         }
                     }]
+                },
+                plugins: {
+                    legend: {
+                        display: true
+                    }
                 }
             }
         });
@@ -103,12 +110,6 @@
                         pieTooltip.style.display = 'block';
                         pieTooltip.style.left = mouseX + 'px';
                         pieTooltip.style.top = mouseY + 'px';
-                        var index = chartElement[0].index;
-                        if (index === 0 || index === 1) {
-                            pieTooltip.style.fontSize = '24px';
-                        } else {
-                            pieTooltip.style.fontSize = '16px';
-                        }
                         pieTooltip.textContent = chartElement[0].label + ': ' + chartElement[0].raw;
                     } else {
                         document.getElementById('pieTooltip').style.display = 'none';
@@ -136,11 +137,17 @@
                             beginAtZero: true
                         }
                     }]
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            usePointStyle: true,
+                            boxWidth: 10
+                        }
+                    }
                 }
             }
         });
-
-        // Add the Gantt chart
         var ctxGantt = document.getElementById('ganttChart').getContext('2d');
         var ganttChart = new Chart(ctxGantt, {
             type: 'bar',
@@ -160,6 +167,7 @@
                 ]
             },
             options: {
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         display: true,
@@ -179,8 +187,8 @@
                                 return value + ' سال';
                             }
                         },
-                        min: Model.Years[0], // Fix the minimum value of the x-axis
-                        max: Model.Years[Model.Years.length - 1] // Fix the maximum value of the x-axis
+                        min: '1392', // Fix the minimum value of the x-axis
+                        max: '1402' // Fix the maximum value of the x-axis
                     },
                     y: {
                         stacked: true,
@@ -192,6 +200,7 @@
                 }
             }
         });
+
 
     </script>
 </body>
