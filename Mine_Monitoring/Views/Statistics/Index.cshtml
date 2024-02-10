@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; // No need for layout since it's a standalone download page
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>آمار صنعت معدن</title>
+</head>
+<body>
+    <h1>دانلود آمار صنعت معدن</h1>
+    <p>برای دانلود آمار صنعت معدن، روی دکمه مربوطه کلیک کنید:</p>
+    <a href="@Url.Action("Mining", "Statistics")" class="btn btn-primary">دانلود آمار صنعت معدن</a>
+    <!-- You can add more buttons for other Excel files here -->
+</body>
+</html>
