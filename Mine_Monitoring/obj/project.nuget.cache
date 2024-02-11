@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KkP9thULtQKj6d6pYdAkN2AYE74m/fqzIiXZIPt5Vrlx9HUhZbtogaGCbdQ8mysO7a3/BFR3747Svq147AQQlQ==",
+  "dgSpecHash": "hYazE4MEsrWKnJNTJQnBjPsvSgUJkDBW2wZIhSFVPG0+C8yhY/hSkfpD4PHSOVTcnYX2EAUFw1T3HpuP+Qcnew==",
   "success": true,
-  "projectFilePath": "F:\\Mine_Monitoring\\Mine_Monitoring\\Mine_Monitoring\\Mine_Monitoring.csproj",
+  "projectFilePath": "F:\\Mine_Monitoring\\Mine_Monitoring\\Mine_Monitoring.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fasooniehchi\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512"
   ],
   "logs": []
 }
