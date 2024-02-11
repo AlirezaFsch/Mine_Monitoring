@@ -3,11 +3,11 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iran Map</title>
+    <title>نقشه ایران</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         #map {
@@ -39,6 +39,143 @@
                     }
                 }).addTo(map);
             });
+
+        // Define mine locations with Persian names
+        var mineLocations = [
+            {
+                "name": "معدن مس سرچشمه",
+                "location": [29.8089, 56.5596] // Kerman
+            },
+            {
+                "name": "معدن سرب و روی انگوران",
+                "location": [36.6714, 48.4967] // Zanjan
+            },
+            {
+                "name": "معدن زغال سنگ زرمهر",
+                "location": [34.6667, 46.6747] // Gilan
+            },
+            {
+                "name": "معدن آهن سنگان",
+                "location": [34.4997, 48.4192] // Isfahan
+            },
+            {
+                "name": "معدن سنگ گچ مالند",
+                "location": [27.5223, 57.1063] // Sistan and Baluchestan
+            },
+            {
+                "name": "معدن نمک شهر جزین",
+                "location": [32.1096, 51.8907] // Isfahan
+            },
+            {
+                "name": "معدن طلا مسکویه",
+                "location": [31.8828, 54.3722] // Fars
+            },
+            {
+                "name": "معدن سنگ آهن گل گهر",
+                "location": [30.1591, 55.1098] // Kerman
+            },
+            {
+                "name": "معدن نیکل خواف",
+                "location": [34.5314, 60.1465] // Razavi Khorasan
+            },
+            {
+                "name": "معدن سرب و روی آرادان",
+                "location": [31.1366, 55.1733] // Yazd
+            },
+            {
+                "name": "معدن آهن چوبر",
+                "location": [34.2597, 48.6257] // Isfahan
+            },
+            {
+                "name": "معدن سنگ آهن داود آباد",
+                "location": [36.0885, 55.1048] // Razavi Khorasan
+            },
+            {
+                "name": "معدن مس ارزون",
+                "location": [32.5394, 55.6928] // Yazd
+            },
+            {
+                "name": "معدن طلا گرماب",
+                "location": [30.3257, 54.3564] // Fars
+            },
+            {
+                "name": "معدن سنگ آهن جزیره قشم",
+                "location": [26.9712, 56.2453] // Hormozgan
+            },
+            {
+                "name": "معدن طلا ملایر",
+                "location": [34.2971, 48.8183] // Lorestan
+            },
+            {
+                "name": "معدن سرب و روی زنجان",
+                "location": [36.6714, 48.4967] // Zanjan
+            },
+            {
+                "name": "معدن طلا گندمان",
+                "location": [37.3546, 57.6702] // Golestan
+            },
+            {
+                "name": "معدن سنگ گچ سمنان",
+                "location": [35.5719, 53.3945] // Semnan
+            },
+            {
+                "name": "معدن طلا ریور",
+                "location": [32.3026, 50.8479] // Chaharmahal and Bakhtiari
+            },
+            {
+                "name": "معدن سنگ گچ نطنز",
+                "location": [32.6321, 51.5906] // Isfahan
+            },
+            {
+                "name": "معدن طلا چناران",
+                "location": [29.3933, 55.7253] // Fars
+            },
+            {
+                "name": "معدن مس بناب",
+                "location": [37.9792, 46.1643] // East Azerbaijan
+            },
+            {
+                "name": "معدن طلا برمانه",
+                "location": [34.2336, 46.1775] // Kermanshah
+            },
+            {
+                "name": "معدن سنگ گچ جونقان",
+                "location": [34.2107, 59.5886] // Isfahan
+            },
+            {
+                "name": "معدن طلا گوهرکوه",
+                "location": [30.1307, 56.1342] // Fars
+            },
+            {
+                "name": "معدن طلا نمک آبرود",
+                "location": [37.9033, 45.9107] // West Azerbaijan
+            },
+            {
+                "name": "معدن طلا کوهرنگ",
+                "location": [36.3333, 59.4639] // Razavi Khorasan
+            },
+            {
+                "name": "معدن طلا گمیشان",
+                "location": [37.1007, 56.1342] // Fars
+            },
+            {
+                "name": "معدن سنگ گچ خوشاب",
+                "location": [29.5221, 57.1342] // Sistan and Baluchestan
+            },
+            {
+                "name": "معدن ونارچ",
+                "location": [35.2028, 50.2475] // Ghom
+            }
+        ];
+
+
+
+        // Add markers for each mine location
+        mineLocations.forEach(mine => {
+            L.marker(mine.location)
+                .bindPopup(mine.name) // Add a popup with the mine name
+                .addTo(map);
+        });
     </script>
 </body>
 </html>

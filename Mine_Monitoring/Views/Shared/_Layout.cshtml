@@ -173,6 +173,7 @@
                 <li><a href="@Url.Action("Index", "Home")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active-page" : "")">صفحه اصلی</a></li>
                 <li><a href="@Url.Action("Index", "Charts")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Charts" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active-page" : "")">داشبورد مانیتورینگ معدن</a></li>
                 <li><a href="@Url.Action("Index", "Map")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Map" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active-page" : "")">نقشه معادن</a></li>
+                <li><a href="@Url.Action("Mining", "Statistics")" class="@(ViewContext.RouteData.Values["controller"].ToString() == "Statistics" && ViewContext.RouteData.Values["action"].ToString() == "Mining" ? "active-page" : "")">آمار صنعت معدن</a></li>
                 <!-- Add more sidebar items here -->
             </ul>
         </div>

@@ -1,6 +1,123 @@
 ﻿@using Mine_Monitoring.Models
+@model HomeViewModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Iran's Mining Industry</h1>
+
+    <!-- First chart: Mining Industry Overview -->
+    <div class="chart-container">
+        <canvas id="miningIndustryChart"></canvas>
+    </div>
+
+    <!-- Second chart: Comparison of GDP and Mining Industry -->
+    <div class="chart-container">
+        <canvas id="gdpVsMiningChart"></canvas>
+    </div>
+
+    <!-- Third chart: Comparison with other countries -->
+    <div class="chart-container">
+        <canvas id="comparisonWithOtherCountriesChart"></canvas>
+    </div>
+
+    <script>
+        var ctxMiningIndustry = document.getElementById('miningIndustryChart').getContext('2d');
+        var miningIndustryChart = new Chart(ctxMiningIndustry, {
+            type: 'line',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.Years)),
+                datasets: [{
+                    label: 'Mining Industry Value',
+                    data: @Html.Raw(Json.Serialize(Model.MiningIndustryData)),
+                    borderColor: 'blue',
+                    backgroundColor: 'rgba(0, 0, 255, 0.2)'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var ctxGDPVsMining = document.getElementById('gdpVsMiningChart').getContext('2d');
+        var gdpVsMiningChart = new Chart(ctxGDPVsMining, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.Years)),
+                datasets: [{
+                    label: 'GDP',
+                    data: @Html.Raw(Json.Serialize(Model.GDPData)),
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Mining Industry Value',
+                    data: @Html.Raw(Json.Serialize(Model.MiningIndustryData)),
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Mining Share of GDP',
+                    data: @Html.Raw(Json.Serialize(Model.MiningShareOfGDPData)),
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var ctxComparisonWithOtherCountries = document.getElementById('comparisonWithOtherCountriesChart').getContext('2d');
+        var comparisonWithOtherCountriesChart = new Chart(ctxComparisonWithOtherCountries, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Json.Serialize(Model.OtherCountriesComparisonData.Select(x => x.CountryName))),
+                datasets: [{
+                    label: 'GDP',
+                    data: @Html.Raw(Json.Serialize(Model.OtherCountriesComparisonData.Select(x => x.GDP))),
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Mining Industry Value',
+                    data: @Html.Raw(Json.Serialize(Model.OtherCountriesComparisonData.Select(x => x.MiningIndustryValue))),
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
