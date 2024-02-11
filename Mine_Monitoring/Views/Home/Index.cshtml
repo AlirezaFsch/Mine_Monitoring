@@ -6,29 +6,89 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>صفحه اصلی</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: calc(33.33% - 20px);
+            float: right;
+            margin-right: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .announcement-board {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            clear: both;
+            text-align: center;
+        }
+
+        .announcement-item {
+            margin-bottom: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1>Iran's Mining Industry</h1>
+    <h1>صنعت معدن ایران</h1>
 
     <!-- First chart: Mining Industry Overview -->
     <div class="chart-container">
-        <canvas id="miningIndustryChart"></canvas>
+        <canvas id="miningIndustryChart" style="width: 400px; height: 400px;"></canvas>
     </div>
 
     <!-- Second chart: Comparison of GDP and Mining Industry -->
     <div class="chart-container">
-        <canvas id="gdpVsMiningChart"></canvas>
+        <canvas id="gdpVsMiningChart" style="width: 400px; height: 400px;"></canvas>
     </div>
 
     <!-- Third chart: Comparison with other countries -->
     <div class="chart-container">
-        <canvas id="comparisonWithOtherCountriesChart"></canvas>
+        <canvas id="comparisonWithOtherCountriesChart" style="width: 400px; height: 400px;"></canvas>
+    </div>
+
+    <!-- تابلو اعلانات -->
+    <div class="announcement-board">
+        <h2>تابلو اعلانات</h2>
+        <table>
+            <tr>
+                <th>فعالیت</th>
+                <th>تاریخ</th>
+            </tr>
+            <tr>
+                <td>فعالیت ۱</td>
+                <td>۱۰ فروردین ۱۴۰۳</td>
+            </tr>
+            <tr>
+                <td>فعالیت ۲</td>
+                <td>۱۵ فروردین ۱۴۰۳</td>
+            </tr>
+            <tr>
+                <td>فعالیت ۳</td>
+                <td>۲۰ فروردین ۱۴۰۳</td>
+            </tr>
+        </table>
     </div>
 
     <script>
@@ -38,7 +98,7 @@
             data: {
                 labels: @Html.Raw(Json.Serialize(Model.Years)),
                 datasets: [{
-                    label: 'Mining Industry Value',
+                    label: 'ارزش صنعت معدن',
                     data: @Html.Raw(Json.Serialize(Model.MiningIndustryData)),
                     borderColor: 'blue',
                     backgroundColor: 'rgba(0, 0, 255, 0.2)'
@@ -66,13 +126,13 @@
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
                 }, {
-                    label: 'Mining Industry Value',
+                    label: 'ارزش صنعت معدن',
                     data: @Html.Raw(Json.Serialize(Model.MiningIndustryData)),
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
                 }, {
-                    label: 'Mining Share of GDP',
+                    label: 'سهم صنعت معدن از GDP',
                     data: @Html.Raw(Json.Serialize(Model.MiningShareOfGDPData)),
                     backgroundColor: 'rgba(255, 206, 86, 0.2)',
                     borderColor: 'rgba(255, 206, 86, 1)',
@@ -101,7 +161,7 @@
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
                 }, {
-                    label: 'Mining Industry Value',
+                    label: 'ارزش صنعت معدن',
                     data: @Html.Raw(Json.Serialize(Model.OtherCountriesComparisonData.Select(x => x.MiningIndustryValue))),
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                     borderColor: 'rgba(54, 162, 235, 1)',
