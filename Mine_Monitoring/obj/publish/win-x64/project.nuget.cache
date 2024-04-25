@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "mwuFAo4HA1fW36H03LoDbZJVimcHnxCnQxUeN1u0Wh2Tt98pvfkHP3pM12XxSezL7F1GIxrV58VdBUGA6zBzXA==",
+  "success": true,
+  "projectFilePath": "F:\\Mine_Monitoring\\Mine_Monitoring\\Mine_Monitoring.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.4\\microsoft.netcore.app.runtime.win-x64.7.0.4.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.4\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.4.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.4\\microsoft.aspnetcore.app.runtime.win-x64.7.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,119 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {},
+    "net7.0/win-x86": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.18.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\user\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\Mine_Monitoring\\Mine_Monitoring\\Mine_Monitoring.csproj",
+      "projectName": "Mine_Monitoring",
+      "projectPath": "F:\\Mine_Monitoring\\Mine_Monitoring\\Mine_Monitoring.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "F:\\Mine_Monitoring\\Mine_Monitoring\\obj\\publish\\win-x86\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "dependencies": {
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+            "target": "Package",
+            "version": "[1.18.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+            "version": "[7.0.4, 7.0.4]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x86",
+            "version": "[7.0.4, 7.0.4]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+            "version": "[7.0.4, 7.0.4]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x86": {
+        "#import": []
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.NETCore.App.Runtime.win-x86"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.WindowsDesktop.App.Runtime.win-x86"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.AspNetCore.App.Runtime.win-x86"
+    }
+  ]
+}

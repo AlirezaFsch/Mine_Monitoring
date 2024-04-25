@@ -1,0 +1,7 @@
+F:\Mine_Monitoring\Mine_Monitoring\obj\Release\net7.0\PubTmp\Out\Mine_Monitoring.exe
+F:\Mine_Monitoring\Mine_Monitoring\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
+F:\Mine_Monitoring\Mine_Monitoring\obj\Release\net7.0\PubTmp\Out\appsettings.json
+F:\Mine_Monitoring\Mine_Monitoring\obj\Release\net7.0\PubTmp\Out\Mine_Monitoring.dll
+F:\Mine_Monitoring\Mine_Monitoring\obj\Release\net7.0\PubTmp\Out\Mine_Monitoring.deps.json
+F:\Mine_Monitoring\Mine_Monitoring\obj\Release\net7.0\PubTmp\Out\Mine_Monitoring.runtimeconfig.json
+F:\Mine_Monitoring\Mine_Monitoring\obj\Release\net7.0\PubTmp\Out\Mine_Monitoring.pdb

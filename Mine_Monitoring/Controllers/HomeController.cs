@@ -40,7 +40,8 @@ namespace Mine_Monitoring.Controllers
                     new CountryComparisonData { CountryName = "USA", GDP = 200000, MiningIndustryValue = 10000 },
                     new CountryComparisonData { CountryName = "China", GDP = 250000, MiningIndustryValue = 15000 },
                     new CountryComparisonData { CountryName = "Russia", GDP = 180000, MiningIndustryValue = 12000 },
-                    new CountryComparisonData { CountryName = "Australia", GDP = 160000, MiningIndustryValue = 18000 }
+                    new CountryComparisonData { CountryName = "Australia", GDP = 160000, MiningIndustryValue = 18000 },
+                    new CountryComparisonData { CountryName = "Iran", GDP = 190000, MiningIndustryValue = 20000 } // Adding Iran's GDP
                 }
             };
 
