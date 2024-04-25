@@ -42,7 +42,6 @@ F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.GeneratedMSB
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.AssemblyInfoInputs.cache
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.AssemblyInfo.cs
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.csproj.CoreCompileInputs.cache
-F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.MvcApplicationPartsAssemblyInfo.cache
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.RazorAssemblyInfo.cache
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.RazorAssemblyInfo.cs
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\staticwebassets\msbuild.Mine_Monitoring.Microsoft.AspNetCore.StaticWebAssets.props
@@ -60,3 +59,4 @@ F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\refint\Mine_Monitoring.dll
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.pdb
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.genruntimeconfig.cache
 F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\ref\Mine_Monitoring.dll
+F:\Mine_Monitoring\Mine_Monitoring\obj\Debug\net7.0\Mine_Monitoring.MvcApplicationPartsAssemblyInfo.cache

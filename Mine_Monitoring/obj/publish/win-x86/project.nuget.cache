@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "yB+yTpAOVmhJJze7HcgW+4qzaanclRRaRgv3zquWgthK3XU31qhqlSahJSLC5zthh2lXFtwtE1KsUtSV6/Q4Fg==",
+  "success": false,
+  "projectFilePath": "F:\\Mine_Monitoring\\Mine_Monitoring\\Mine_Monitoring.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.NETCore.App.Runtime.win-x86"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.WindowsDesktop.App.Runtime.win-x86"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.AspNetCore.App.Runtime.win-x86"
+    }
+  ]
+}
